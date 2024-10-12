@@ -1,0 +1,250 @@
+body {
+    font-family: 'Sriracha', cursive;
+    background: linear-gradient(135deg, #00ffe1, #00fb69); /* พื้นหลังที่สวยงาม */
+    background-size: 200% 200%; /* เพิ่มขนาดพื้นหลังเพื่อให้การเคลื่อนไหวสมูทขึ้น */
+    animation: gradient 10s ease infinite; /* เพิ่มระยะเวลาและใช้ ease เพื่อให้สมูทขึ้น */
+    display: flex; /* ใช้ Flexbox */
+    justify-content: center; /* จัดกลางแนวนอน */
+    align-items: center; /* จัดกลางแนวตั้ง */
+    min-height: 100vh; /* ความสูงของหน้าจอ */
+    margin: 0; /* ลบ margin ของ body */
+    overflow: hidden; /* ป้องกันการเลื่อน */
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0.6;
+    animation: bubble 8s infinite; /* ปรับเวลาให้เร็วขึ้น */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้ฟองอากาศ */
+}
+
+.bubble:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    left: 10%;
+    bottom: -150px;
+    /* ปรับตำแหน่งเริ่มต้น */
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    width: 60px;
+    height: 60px;
+    left: 25%;
+    bottom: -150px;
+    /* ปรับตำแหน่งเริ่มต้น */
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(3) {
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    bottom: -150px;
+    /* ปรับตำแหน่งเริ่มต้น */
+    animation-delay: 4s;
+}
+
+.bubble:nth-child(4) {
+    width: 50px;
+    height: 50px;
+    left: 75%;
+    bottom: -150px;
+    /* ปรับตำแหน่งเริ่มต้น */
+    animation-delay: 6s;
+}
+
+.bubble:nth-child(5) {
+    width: 70px;
+    height: 70px;
+    left: 80%;
+    bottom: -150px;
+    /* ปรับตำแหน่งเริ่มต้น */
+    animation-delay: 8s;
+}
+
+.bubble:nth-child(6) {
+    width: 90px;
+    height: 90px;
+    left: 15%;
+    bottom: -150px;
+    /* ปรับตำแหน่งเริ่มต้น */
+    animation-delay: 10s;
+}
+
+.bubble:nth-child(7) {
+    width: 55px;
+    height: 55px;
+    left: 35%;
+    bottom: -150px;
+    /* ปรับตำแหน่งเริ่มต้น */
+    animation-delay: 12s;
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateY(-500px); /* ปรับความสูงของการลอยให้สูงขึ้น */
+        opacity: 0.2;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.95); /* สีพื้นหลังของฟอร์ม */
+    border-radius: 15px; /* มุมโค้งมน */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* เงา */
+    padding: 40px; /* Padding รอบๆ ฟอร์ม */
+    width: 360px; /* ความกว้างของฟอร์ม */
+    text-align: center; /* จัดข้อความให้อยู่กลาง */
+    animation: fadeIn 0.8s ease-in-out; /* เอฟเฟกต์การเข้ามา */
+}
+
+.login-header {
+    background-color: #2DF793; /* สีพื้นหลังของหัวฟอร์ม */
+    color: white; /* สีข้อความ */
+    padding: 1rem; /* Padding รอบๆ */
+    border-radius: 15px 15px 15px 15px; /* มุมโค้งมน */
+    text-align: center; /* จัดข้อความให้อยู่กลาง */
+    font-size: 1.8rem; /* ขนาดฟอนต์ */
+    font-weight: 600; /* น้ำหนักฟอนต์ */
+    letter-spacing: 1px; /* ระยะห่างระหว่างตัวอักษร */
+}
+
+.form-control {
+    border-radius: 25px; /* มุมโค้งมน */
+    padding: 0.75rem 1.5rem; /* Padding ภายใน */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* เงา */
+    border: 1px solid #ccc; /* เส้นขอบ */
+    transition: border-color 0.3s; /* เอฟเฟกต์การเปลี่ยนสีเส้นขอบ */
+}
+
+.form-control:focus {
+    border-color: #2DF793; /* เปลี่ยนสีเส้นขอบเมื่อโฟกัส */
+    outline: none; /* ลบเส้นขอบที่เกิดจากการโฟกัส */
+}
+
+.btn-primary, .btn-secondary { /* ทำให้ปุ่มทั้งสองมีขนาดเท่ากัน */
+    background-color: #2DF793; /* สีพื้นหลังของปุ่ม */
+    border: none; /* ไม่มีเส้นขอบ */
+    border-radius: 25px; /* มุมโค้งมน */
+    padding: 0.75rem 1.5rem; /* Padding ภายใน */
+    padding: 10px;
+    width: 100%; /* ความกว้างเต็ม */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* เอฟเฟกต์การเปลี่ยนสีและขนาด */
+    color: white; /* สีข้อความในปุ่ม */
+    font-weight: 600; /* น้ำหนักฟอนต์ */
+    font-size: 1rem; /* ขนาดฟอนต์ */
+    text-transform: uppercase; /* เปลี่ยนข้อความเป็นตัวพิมพ์ใหญ่ */
+    letter-spacing: 1px; /* ระยะห่างระหว่างตัวอักษร */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* เงาเริ่มต้น */
+}
+
+.btn-primary:hover, .btn-secondary:hover { /* ทำให้ปุ่มทั้งสองมีเอฟเฟกต์ hover เหมือนกัน */
+    background-color: #26CBFC; /* สีเมื่อ hover */
+    transform: translateY(-3px); /* ขยายขนาดเมื่อ hover */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); /* เงาเมื่อ hover */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อ hover */
+}
+
+.btn-secondary { /* ปรับแต่งปุ่มรอง */
+    background-color: #f39c12; /* สีพื้นหลังของปุ่มรอง */
+}
+
+.btn-secondary:hover { /* เอฟเฟกต์ hover สำหรับปุ่มรอง */
+    background-color: #e67e22; /* สีเมื่อ hover สำหรับปุ่มรอง */
+}
+
+.form-group {
+    position: relative; /* ตำแหน่งสัมพัทธ์ */
+    margin-bottom: 1.5rem; /* ระยะห่างด้านล่าง */
+}
+
+.form-group i {
+    position: absolute; /* ตำแหน่งสัมพัทธ์ */
+    left: 15px; /* ระยะห่างจากซ้าย */
+    top: 50%; /* จัดกลางแนวตั้ง */
+    transform: translateY(-50%); /* จัดกลางแนวตั้ง */
+    color: #999; /* สีไอคอน */
+}
+
+.form-group input {
+    padding-left: 2.5rem; /* Padding ด้านซ้าย */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* เริ่มต้นที่โปร่งใส */
+        transform: translateY(20px); /* เริ่มต้นที่เลื่อนลง */
+    }
+    to {
+        opacity: 1; /* สิ้นสุดที่ไม่โปร่งใส */
+        transform: translateY(0); /* สิ้นสุดที่ตำแหน่งเดิม */
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        display: flex; /* ใช้ Flexbox */
+        justify-content: center; /* จัดกลางแนวนอน */
+        align-items: center; /* จัดกลางแนวตั้ง */
+        min-height: 100vh; /* ความสูงของหน้าจอ */
+        margin: 0; /* ลบ margin ของ body */
+    }
+
+    .login-container {
+        padding: 1.5rem; /* Padding สำหรับหน้าจอเล็ก */
+        max-width: 90%; /* ความกว้างสูงสุด */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+        border-radius: 15px; /* มุมโค้งมน */
+        width: 100%; /* ความกว้างเต็ม */
+    }
+}
+
+.password-container {
+    display: flex; /* ใช้ Flexbox เพื่อจัดเรียง */
+    align-items: center; /* จัดกลางแนวตั้ง */
+    border: 1px solid #ccc; /* ขอบของกล่อง */
+    border-radius: 5px; /* มุมโค้ง */
+    padding: 5px; /* ระยะห่างภายใน */
+    background-color: #f9f9f9; /* สีพื้นหลัง */
+}
+
+input[type="password"], input[type="text"] {
+    border: none; /* ลบขอบของ input */
+    outline: none; /* ลบเส้นขอบเมื่อเลือก */
+    flex: 1; /* ให้ input ขยายเต็มที่ */
+    padding: 5px; /* ระยะห่างภายใน */
+}
+
+button {
+    border: none; /* ลบขอบของปุ่ม */
+    background-color: transparent; /* สีพื้นหลังโปร่งใส */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อชี้ */
+    padding: 5px; /* ระยะห่างภายใน */
+    width: 30px; /* กำหนดความกว้างของปุ่มให้เล็กเท่ากับไอคอน */
+    display: flex; /* ใช้ Flexbox เพื่อจัดกลางไอคอน */
+    justify-content: center; /* จัดกลางแนวนอน */
+    align-items: center; /* จัดกลางแนวตั้ง */
+}

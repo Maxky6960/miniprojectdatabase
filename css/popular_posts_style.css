@@ -1,0 +1,200 @@
+.post-image {
+    width: 200px; /* ความกว้างที่ต้องการ */
+    height: 200px; /* ความสูงที่ต้องการ */
+    object-fit: cover; /* ให้ภาพปรับขนาดแบบครอบเต็มพื้นที่ */
+}
+body {
+    background: linear-gradient(135deg, #A3E4D7 25%, #2ECC71 75%); /* สีพื้นหลังแบบไล่ระดับ */
+    font-family: 'Sriracha', cursive; /* ฟอนต์ */
+    color: #333; /* สีข้อความ */
+    line-height: 1.6; /* เพิ่มระยะห่างระหว่างบรรทัด */
+    margin: 0; /* ลบระยะห่างภายนอก */
+    background-size: 200% 200%; /* เพิ่มขนาดพื้นหลังเพื่อให้การเคลื่อนไหวสมูทขึ้น */
+    animation: gradient 10s ease infinite; /* เพิ่มระยะเวลาและใช้ ease เพื่อให้สมูทขึ้น */
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.95); /* ปรับความโปร่งใส */
+    border-radius: 20px; /* ปรับมุมให้โค้งมนมากขึ้น */
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2); /* เพิ่มความลึก */
+    padding: 3rem; /* เพิ่มพื้นที่ภายใน */
+    margin-bottom: 2rem; /* เพิ่มระยะห่างด้านล่าง */
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* เพิ่มการเปลี่ยนแปลงเมื่อมีการโฮเวอร์ */
+    display: flex; /* ใช้ flexbox เพื่อจัดเรียงเนื้อหา */
+    flex-direction: column; /* จัดเรียงแนวตั้ง */
+    border: 1px solid #e0e0e0; /* เพิ่มเส้นขอบ */
+    overflow: hidden; /* ป้องกันเนื้อหาล débord */
+}
+
+.container:hover {
+    transform: translateY(-5px); /* ยกขึ้นเมื่อโฮเวอร์ */
+    box-shadow: 0 12px 60px rgba(0, 0, 0, 0.25); /* เพิ่มเงาเมื่อโฮเวอร์ */
+    background-color: rgba(255, 255, 255, 1); /* ทำให้พื้นหลังทึบขึ้นเมื่อโฮเวอร์ */
+    border-color: #2ECC71; /* เปลี่ยนสีเส้นขอบเมื่อโฮเวอร์ */
+}
+
+h2 {
+    color: #2C3E50;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1.5rem; /* เพิ่มระยะห่างด้านล่าง */
+}
+
+.form-control {
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+    padding: 10px;
+    font-size: 1rem;
+    width: 100%;
+    height: calc(70%);
+    margin-bottom: 1rem; /* เพิ่มระยะห่างด้านล่าง */
+}
+
+.form-control:focus {
+    border-color: #2ECC71;
+    box-shadow: 0 0 5px rgba(46, 204, 113, 0.5);
+}
+
+.btn-primary {
+    background-color: #2ECC71;
+    border: none;
+    border-radius: 25px; /* ปรับมุมให้โค้งมนมากขึ้น */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* เพิ่มการเปลี่ยนแปลงเงา */
+    padding: 12px 24px; /* ปรับขนาดปุ่ม */
+    margin-bottom: 1rem; /* เพิ่มระยะห่างด้านล่าง */
+}
+
+.btn-primary:hover {
+    background-color: #27ae60;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.5); /* เพิ่มเงาเมื่อชี้ */
+}
+
+.btn-secondary {
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-bottom: 1rem; /* เพิ่มระยะห่างด้านล่าง */
+}
+
+.btn-secondary:hover {
+    background-color: #d1d1d1;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7); /* ปรับความโปร่งใส */
+    opacity: 0.8; /* ปรับความทึบ */
+    animation: bubble 10s infinite; /* เปลี่ยนแปลงการเคลื่อนไหว */
+}
+
+.bubble:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    left: -50px; /* เริ่มจากนอกหน้าจอทางซ้าย */
+    bottom: 5%; /* ปรับตำแหน่งแนวตั้งลงมา */
+    animation-delay: 0s; /* ไม่มีการหน่วงเวลา */
+}
+
+.bubble:nth-child(2) {
+    width: 60px;
+    height: 60px;
+    left: -40px; /* เริ่มจากนอกหน้าจอทางซ้าย */
+    bottom: 25%; /* ปรับตำแหน่งแนวตั้งลงมา */
+    animation-delay: 2s; /* หน่วงเวลา 2 วินาที */
+}
+
+
+.bubble:nth-child(3) {
+    width: 80px;
+    height: 80px;
+    left: -30px; /* เริ่มจากนอกหน้าจอทางซ้าย */
+    bottom: 45%; /* ปรับตำแหน่งแนวตั้งลงมา */
+    animation-delay: 4s; /* หน่วงเวลา 4 วินาที */
+}
+
+.bubble:nth-child(4) {
+    width: 50px;
+    height: 50px;
+    left: -20px; /* เริ่มจากนอกหน้าจอทางซ้าย */
+    bottom: 65%; /* ปรับตำแหน่งแนวตั้งลงมา */
+    animation-delay: 6s; /* หน่วงเวลา 6 วินาที */
+}
+
+.bubble:nth-child(5) {
+    width: 70px;
+    height: 70px;
+    left: -10px; /* เริ่มจากนอกหน้าจอทางซ้าย */
+    bottom: 85%; /* ปรับตำแหน่งแนวตั้งลงมา */
+    animation-delay: 8s; /* หน่วงเวลา 8 วินาที */
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0); /* เริ่มต้นที่ตำแหน่งเดิม */
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateY(-200px) translateX(90vw); /* ขยับขึ้นและไปทางขวา 90% ของจอ */
+        opacity: 0.2;
+    }
+
+    100% {
+        transform: translateY(0) translateX(0); /* ย้อนกลับไปที่ตำแหน่งเดิม */
+        opacity: 0.6;
+    }
+}
+
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: .75rem 1.25rem;
+    background-color: #ffffffc6;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: 10px; /* เพิ่มมุมโค้งมน */
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* เพิ่มการเปลี่ยนแปลง */
+    overflow: hidden; /* ป้องกันเนื้อหาล débord */
+    z-index: 1; /* เพิ่ม z-index เพื่อไม่ให้ทับปุ่ม */
+    margin-bottom: 0.8rem; /* เพิ่มระยะห่างด้านล่าง */
+}
+
+.list-group-item:hover {
+    transform: translateY(-5px); /* ยกขึ้นเมื่อชี้ */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* เพิ่มเงาเมื่อชี้ */
+    background-color: rgba(255, 255, 255, 0.95); /* ปรับสีพื้นหลังเมื่อชี้ */
+}
+
+.list-group-item::before {
+    content: ''; /* เพิ่มเส้นขอบด้านบน */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px; /* ความสูงของเส้นขอบ */
+    background-color: #c2bebebe; /* สีของเส้นขอบ */
+    border-radius: 10px 10px 0 0; /* มุมโค้งมน */
+    z-index: -1; /* ทำให้เส้นขอบอยู่ด้านหลัง */
+}

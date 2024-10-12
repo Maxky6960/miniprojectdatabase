@@ -1,0 +1,191 @@
+body {
+    font-family: 'Sriracha', cursive;
+    background: linear-gradient(135deg, #00ffe1, #00fb69); /* พื้นหลังที่สวยงาม */
+    background-size: 200% 200%; /* เพิ่มขนาดพื้นหลังเพื่อให้การเคลื่อนไหวสมูทขึ้น */
+    animation: gradient 10s ease infinite; /* เพิ่มระยะเวลาและใช้ ease เพื่อให้สมูทขึ้น */
+    display: flex; /* ใช้ Flexbox */
+    justify-content: center; /* จัดกลางแนวนอน */
+    align-items: center; /* จัดกลางแนวตั้ง */
+    min-height: 100vh; /* ความสูงของหน้าจอ */
+    margin: 0; /* ลบ margin ของ body */
+    position: relative; /* ทำให้ body เป็นตำแหน่งสัมพัทธ์ */
+    overflow: hidden; /* ป้องกันการเลื่อน */
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0.6;
+    animation: bubble 10s infinite; /* ปรับเวลาให้เหมาะสม */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้ฟองอากาศ */
+}
+
+.bubble:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    left: 10%;
+    bottom: 0; /* ปรับตำแหน่งเริ่มต้นให้สูงขึ้น */
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    width: 60px;
+    height: 60px;
+    left: 25%;
+    bottom: 0; /* ปรับตำแหน่งเริ่มต้นให้สูงขึ้น */
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(3) {
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    bottom: 0; /* ปรับตำแหน่งเริ่มต้นให้สูงขึ้น */
+    animation-delay: 4s;
+}
+
+.bubble:nth-child(4) {
+    width: 50px;
+    height: 50px;
+    left: 75%;
+    bottom: 0; /* ปรับตำแหน่งเริ่มต้นให้สูงขึ้น */
+    animation-delay: 6s;
+}
+
+.bubble:nth-child(5) {
+    width: 70px;
+    height: 70px;
+    left: 80%;
+    bottom: 0; /* ปรับตำแหน่งเริ่มต้นให้สูงขึ้น */
+    animation-delay: 8s;
+}
+
+.bubble:nth-child(6) {
+    width: 90px;
+    height: 90px;
+    left: 15%;
+    bottom: 0; /* ปรับตำแหน่งเริ่มต้นให้สูงขึ้น */
+    animation-delay: 10s;
+}
+
+.bubble:nth-child(7) {
+    width: 55px;
+    height: 55px;
+    left: 35%;
+    bottom: 0; /* ปรับตำแหน่งเริ่มต้นให้สูงขึ้น */
+    animation-delay: 12s;
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateY(-500px); /* ปรับความสูงของการลอย */
+        opacity: 0; /* ทำให้โปร่งใสเมื่อถึงจุดสูงสุด */
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.register-container {
+    background-color: rgba(255, 255, 255, 0.95); /* สีพื้นหลังของฟอร์ม */
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.register-header {
+    background-color: #2DF793; /* สีพื้นหลังของหัวฟอร์ม */
+    color: white; /* สีข้อความ */
+    padding: 1rem; /* Padding รอบๆ */
+    border-radius: 15px 15px 15px 15px; /* มุมโค้งมน */
+    text-align: center; /* จัดข้อความให้อยู่กลาง */
+    font-size: 1.8rem; /* ขนาดฟอนต์ */
+    font-weight: 600; /* น้ำหนักฟอนต์ */
+    letter-spacing: 1px; /* ระยะห่างระหว่างตัวอักษร */
+}
+
+.form-control {
+    border-radius: 25px; /* มุมโค้งมน */
+    padding: 0.75rem 1.5rem; /* Padding ภายใน */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* เงา */
+    border: 1px solid #ccc; /* เส้นขอบ */
+    transition: border-color 0.3s; /* เอฟเฟกต์การเปลี่ยนสีเส้นขอบ */
+}
+
+.form-control:focus {
+    border-color: #2DF793; /* เปลี่ยนสีเส้นขอบเมื่อโฟกัส */
+    outline: none; /* ลบเส้นขอบที่เกิดจากการโฟกัส */
+}
+
+.btn-primary {
+    background-color: #2DF793; /* สีพื้นหลังของปุ่ม */
+    border: none; /* ไม่มีเส้นขอบ */
+    border-radius: 25px; /* มุมโค้งมน */
+    padding: 0.75rem 1.5rem; /* Padding ภายใน */
+    width: 100%; /* ความกว้างเต็ม */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* เอฟเฟกต์การเปลี่ยนสีและขนาด */
+    color: white; /* สีข้อความในปุ่ม */
+    font-weight: 600; /* น้ำหนักฟอนต์ */
+}
+
+.btn-primary:hover {
+    background-color: #26CBFC; /* สีเมื่อ hover */
+    transform: translateY(-3px); /* ขยายขนาดเมื่อ hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* เงาเมื่อ hover */
+}
+
+.form-group {
+    position: relative; /* ตำแหน่งสัมพัทธ์ */
+    margin-bottom: 1.5rem; /* ระยะห่างด้านล่าง */
+}
+
+.form-group i {
+    position: absolute; /* ตำแหน่งสัมพัทธ์ */
+    left: 15px; /* ระยะห่างจากซ้าย */
+    top: 50%; /* จัดกลางแนวตั้ง */
+    transform: translateY(-50%); /* จัดกลางแนวตั้ง */
+    color: #999; /* สีไอคอน */
+}
+
+.form-group input {
+    padding-left: 2.5rem; /* Padding ด้านซ้าย */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* เริ่มต้นที่โปร่งใส */
+        transform: translateY(20px); /* เริ่มต้นที่เลื่อนลง */
+    }
+    to {
+        opacity: 1; /* สิ้นสุดที่ไม่โปร่งใส */
+        transform: translateY(0); /* สิ้นสุดที่ตำแหน่งเดิม */
+    }
+}
+
+@media (max-width: 768px) {
+    .register-container {
+        padding: 1.5rem; /* Padding สำหรับหน้าจอเล็ก */
+        max-width: 90%; /* ความกว้างสูงสุด */
+        height: 70px;
+    }
+}

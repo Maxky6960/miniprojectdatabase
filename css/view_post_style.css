@@ -1,0 +1,530 @@
+body {
+    font-family: 'Sriracha', cursive;
+    background: linear-gradient(135deg, #A3E4D7 25%, #2ECC71 75%);
+    /* สีพื้นหลัง */
+    background-size: 200% 200%;
+    /* ขยายขนาดพื้นหลัง */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-y: auto;
+    position: relative;
+    font-size: 1.1rem;
+    /* ขนาดฟอนต์สำหรับเนื้อหา */
+    color: #333;
+    /* สีข้อความหลัก */
+    animation: backgroundAnimation 10s linear infinite;
+    /* เพิ่มอนิเมชั่น */
+    transition: background 1.5s ease;
+    /* เพิ่ม transition สำหรับพื้นหลัง */
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+        /* เริ่มต้นที่ซ้าย */
+    }
+
+    100% {
+        background-position: 100% 50%;
+        /* เลื่อนไปที่ขวา */
+    }
+}
+
+
+.post-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    /* ปรับให้สีพื้นหลังเข้มขึ้น */
+    border-radius: 15px;
+    /* เพิ่มความโค้งมน */
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+    /* เพิ่มความเข้มของเงา */
+    padding: 35px;
+    /* เพิ่ม padding */
+    margin-bottom: 30px;
+    /* เพิ่ม margin */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* ปรับเวลา transition */
+}
+
+
+.post-container:hover {
+    transform: scale(1.02);
+    /* ปรับขนาดเมื่อ hover */
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.3);
+    /* เพิ่มความเข้มของเงาเมื่อ hover */
+}
+
+
+h1 {
+    color: #2C3E50;
+    /* สีข้อความ */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    /* เพิ่มเงาให้ข้อความ */
+    font-size: 2.5rem;
+    /* ปรับขนาดฟอนต์ */
+    margin-bottom: 30px;
+    /* เพิ่ม margin */
+    text-align: center;
+    /* จัดกลางข้อความ */
+}
+
+
+p {
+    margin-top: 0 !important;
+    font-size: 1.2rem !important;
+    /* ขนาดฟอนต์ที่อ่านง่าย */
+    margin-bottom: 0.5rem !important;
+    line-height: 1.6;
+    /* เพิ่มระยะห่างระหว่างบรรทัด */
+}
+
+
+.btn-custom {
+    margin-right: 10px;
+}
+
+
+.img-fluid {
+    border-radius: 15px;
+    /* เพิ่มความโค้งมน */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    /* เพิ่มเงา */
+    margin-bottom: 20px;
+    /* เพิ่มระยะห่างด้านล่าง */
+}
+
+
+.comments-header {
+    background-color: #f1f1f1;
+    /* ปรับสีพื้นหลัง */
+    color: #333;
+    /* ปรับสีข้อความ */
+    padding: 25px;
+    /* เพิ่ม padding */
+    border-radius: 12px;
+    /* เพิ่มความโค้งมน */
+    text-align: center;
+    margin-bottom: 30px;
+    /* เพิ่ม margin */
+    font-size: 1.8rem;
+    /* ปรับขนาดฟอนต์ */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    /* เพิ่มความเข้มของเงา */
+}
+
+
+.comment-item {
+    background-color: rgba(240, 248, 245, 0.95);
+    /* ปรับสีพื้นหลัง */
+    border-left: 6px solid #16a085;
+    /* ปรับสีเส้นขอบ */
+    margin-bottom: 15px;
+    /* เพิ่ม margin */
+    border-radius: 12px;
+    /* เพิ่มความโค้งมน */
+    padding: 15px;
+    /* เพิ่ม padding */
+    transition: background 0.4s, transform 0.2s;
+    /* ปรับเวลา transition */
+}
+
+
+.comment-item:hover {
+    background-color: #b2dfdb;
+    /* สีเมื่อ hover */
+    transform: translateY(-2px);
+    /* ยกขึ้นเมื่อ hover */
+}
+
+
+.comment-item img {
+    border-radius: 50%;
+    /* ทำให้รูปภาพเป็นวงกลม */
+    margin-right: 10px;
+    /* ระยะห่างด้านขวา */
+}
+
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0.6;
+    animation: bubble 10s infinite;
+    /* ปรับเวลาให้เหมาะสม */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* เพิ่มเงาให้ฟองอากาศ */
+}
+
+
+.bubble:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    left: 10%;
+    bottom: 0;
+    /* ตำแหน่งเริ่มต้น */
+    animation-delay: 0s;
+}
+
+
+.bubble:nth-child(2) {
+    width: 60px;
+    height: 60px;
+    left: 25%;
+    bottom: 0;
+    /* ตำแหน่งเริ่มต้น */
+    animation-delay: 2s;
+}
+
+
+.bubble:nth-child(3) {
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    bottom: 0;
+    /* ตำแหน่งเริ่มต้น */
+    animation-delay: 4s;
+}
+
+
+.bubble:nth-child(4) {
+    width: 50px;
+    height: 50px;
+    left: 75%;
+    bottom: 0;
+    /* ตำแหน่งเริ่มต้น */
+    animation-delay: 6s;
+}
+
+
+.bubble:nth-child(5) {
+    width: 70px;
+    height: 70px;
+    left: 80%;
+    bottom: 0;
+    /* ตำแหน่งเริ่มต้น */
+    animation-delay: 8s;
+}
+
+
+.bubble:nth-child(6) {
+    width: 90px;
+    height: 90px;
+    left: 15%;
+    bottom: 0;
+    /* ตำแหน่งเริ่มต้น */
+    animation-delay: 10s;
+}
+
+
+.bubble:nth-child(7) {
+    width: 55px;
+    height: 55px;
+    left: 35%;
+    bottom: 0;
+    /* ตำแหน่งเริ่มต้น */
+    animation-delay: 12s;
+}
+
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateY(-100vh);
+        /* ลอยขึ้นไปถึงด้านบนสุดของหน้าจอ */
+        opacity: 0;
+        /* ทำให้โปร่งใสเมื่อถึงจุดสูงสุด */
+    }
+}
+
+
+.btn-primary {
+    background: linear-gradient(135deg, #2980b9, #3498db);
+    /* ใช้ gradient */
+    color: #ffffff;
+    text-align: center;
+    border-radius: 30px;
+    /* เพิ่มความโค้งมน */
+    padding: 18px 35px;
+    /* เพิ่ม padding */
+    margin-bottom: 30px;
+    /* เพิ่ม margin */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+    /* เพิ่มความเข้มของเงา */
+    border: none;
+    transition: background 0.4s, transform 0.3s;
+    /* ปรับเวลา transition */
+}
+
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #1a5276, #2980b9);
+    /* ใช้ gradient เมื่อ hover */
+    transform: scale(1.07);
+    /* ปรับขนาดเมื่อ hover */
+}
+
+
+.btn-back {
+    background-color: #2ecc71;
+    /* เปลี่ยนสีพื้นหลัง */
+    border: none;
+    border-radius: 30px;
+    /* เพิ่มความโค้งมน */
+    padding: 12px 25px;
+    /* เพิ่ม padding */
+    font-size: 1.2rem;
+    /* ปรับขนาดฟอนต์ */
+    color: white;
+    transition: background-color 0.4s ease, transform 0.3s ease;
+    /* ปรับเวลา transition */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    /* เพิ่มความเข้มของเงา */
+}
+
+
+.btn-back:hover {
+    background-color: #27ae60;
+    /* เปลี่ยนสีเมื่อ hover */
+    transform: translateY(-4px);
+    /* ปรับการเคลื่อนไหวเมื่อ hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    /* เพิ่มความเข้มของเงา */
+}
+
+
+.btn-back i {
+    margin-right: 5px;
+    /* ระยะห่างด้านขวา */
+}
+
+
+.comment-box {
+    display: flex;
+    align-items: start;
+    margin-bottom: 15px;
+    /* เพิ่มระยะห่างด้านล่าง */
+}
+
+
+.comment-box img {
+    margin-right: 10px;
+    /* ระยะห่างด้านขวา */
+}
+
+
+.comment-box div {
+    flex: 1;
+    /* ให้ div ขยายเต็มพื้นที่ */
+}
+
+
+.comment-input {
+    border: 2px solid #a7a7a7;
+    /* เส้นขอบ */
+    border-radius: 10px;
+    /* ความโค้งมน */
+    padding: 10px;
+    /* Padding */
+    min-height: 50px;
+    /* ความสูงขั้นต่ำ */
+    margin-bottom: 15px;
+    /* เพิ่มระยะห่างด้านล่าง */
+    background-color: #f8f9fa;
+    /* สีพื้นหลัง */
+    transition: background-color 0.3s, border-color 0.3s;
+    /* เอฟเฟกต์การเปลี่ยนสี */
+    font-size: 1rem;
+    /* ขนาดฟอนต์สำหรับช่องกรอกความคิดเห็น */
+}
+
+
+.comment-input:focus {
+    background-color: #ffffff;
+    /* สีพื้นหลังเมื่อโฟกัส */
+    border-color: #0056b3;
+    /* สีเส้นขอบเมื่อโฟกัส */
+    outline: none;
+    /* ลบเส้นขอบที่เกิดจากการโฟกัส */
+}
+
+
+.submit-comment {
+    background-color: #007bff;
+    /* สีพื้นหลัง */
+    color: white;
+    /* สีข้อความ */
+    border: none;
+    /* ไม่มีเส้นขอบ */
+    padding: 10px 20px;
+    /* Padding */
+    border-radius: 5px;
+    /* ความโค้งมน */
+    cursor: pointer;
+    /* เปลี่ยนเคอร์เซอร์เมื่อชี้ */
+    transition: background-color 0.3s;
+    /* เอฟเฟกต์การเปลี่ยนสี */
+    font-size: 1rem;
+    /* ขนาดฟอนต์สำหรับปุ่มส่งความคิดเห็น */
+}
+
+
+.submit-comment:hover {
+    background-color: #0056b3;
+    /* สีเมื่อ hover */
+}
+
+
+.emoji-button {
+    background-color: #ffc107;
+    /* สีพื้นหลัง */
+    color: white;
+    /* สีข้อความ */
+    border: none;
+    /* ไม่มีเส้นขอบ */
+    padding: 10px;
+    /* Padding */
+    border-radius: 5px;
+    /* ความโค้งมน */
+    cursor: pointer;
+    /* เปลี่ยนเคอร์เซอร์เมื่อชี้ */
+    transition: background-color 0.3s;
+    /* เอฟเฟกต์การเปลี่ยนสี */
+    position: relative;
+    /* ทำให้ปุ่มนี้เป็นจุดอ้างอิงสำหรับตำแหน่งของ emoji picker */
+}
+
+
+.emoji-button:hover {
+    background-color: #e0a800;
+    /* สีเมื่อ hover */
+}
+
+
+.emoji-picker {
+    position: absolute;
+    /* ใช้ตำแหน่งแบบ absolute */
+    background: #fff;
+    /* สีพื้นหลัง */
+    border: 1px solid #ccc;
+    /* เส้นขอบ */
+    padding: 10px;
+    /* Padding */
+    z-index: 1000;
+    /* ควบคุมลำดับซ้อน */
+    display: none;
+    /* ซ่อนกล่องอิโมจิเริ่มต้น */
+    border-radius: 8px;
+    /* ทำให้มุมมน */
+    right: 20px;
+    /* ระยะห่างจากขวา */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* เพิ่มเงา */
+}
+
+
+.emoji-list {
+    display: grid;
+    /* ใช้ grid layout */
+    grid-template-columns: repeat(4, 1fr);
+    /* จำนวนคอลัมน์ */
+    gap: 10px;
+    /* ระยะห่างระหว่างอิโมจิ */
+    padding: 10px;
+    /* Padding */
+    background-color: #f9f9f9;
+    /* สีพื้นหลัง */
+    border-radius: 8px;
+    /* ทำให้มุมมน */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* เพิ่มเงา */
+    overflow-y: auto;
+    /* เลื่อนเมื่อมีจำนวนมาก */
+    max-height: 200px;
+    /* ความสูงสูงสุด */
+    max-width: 300px;
+    /* ความกว้างสูงสุด */
+}
+
+
+.emoji-list .emoji {
+    display: flex;
+    /* ใช้ flexbox */
+    justify-content: center;
+    /* จัดให้อิโมจิกึ่งกลาง */
+    align-items: center;
+    /* จัดให้เนื้อหากึ่งกลาง */
+    font-size: 32px;
+    /* ขนาดอิโมจิ */
+    cursor: pointer;
+    /* เปลี่ยนเคอร์เซอร์เมื่อชี้ไปที่อิโมจิ */
+    transition: transform 0.2s;
+    /* เอฟเฟกต์การเปลี่ยนขนาด */
+    padding: 10px;
+    /* เพิ่ม padding ให้อิโมจิ */
+    border-radius: 4px;
+    /* ทำให้มุมมนของอิโมจิ */
+}
+
+
+.emoji-list .emoji:hover {
+    background-color: #e0e0e0;
+    /* เปลี่ยนสีพื้นหลังเมื่อชี้เมาส์ */
+    transform: scale(1.2);
+    /* ขยายขนาดอิโมจิเมื่อชี้เมาส์ */
+}
+
+
+.emoji-item {
+    cursor: pointer;
+    /* เปลี่ยนเคอร์เซอร์เมื่อชี้ */
+    font-size: 24px;
+    /* ขนาดอิโมจิ */
+    text-align: center;
+    /* จัดกลางข้อความ */
+}
+
+
+.suggestions-list {
+    position: absolute;
+    /* ใช้ตำแหน่งแบบ absolute */
+    background: white;
+    /* สีพื้นหลัง */
+    border-radius: 4px;
+    /* ความโค้งมน */
+    width: 40%;
+    /* ความกว้าง */
+    max-height: 300px;
+    /* สูงสุด */
+    overflow-y: auto;
+    /* เลื่อนเมื่อมีจำนวนมาก */
+    z-index: 1000;
+    /* ควบคุมลำดับซ้อน */
+    margin-top: 53px;
+    /* ขยับลงจากแถบเมนู */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+        /* ปรับขนาดฟอนต์สำหรับหน้าจอเล็ก */
+    }
+
+    .post-container,
+    .comment-item {
+        padding: 15px;
+        /* ปรับ padding สำหรับหน้าจอเล็ก */
+    }
+
+    .emoji-list {
+        grid-template-columns: repeat(4, 1fr);
+        /* ลดจำนวนคอลัมน์เมื่อหน้าจอเล็ก */
+    }
+}

@@ -1,0 +1,252 @@
+body {
+    background: linear-gradient(135deg, #A3E4D7, #2ECC71, #A3E4D7); /* สีพื้นหลัง */
+    background-size: 200% 200%; /* ขยายขนาดพื้นหลัง */
+    animation: backgroundAnimation 15s ease-in-out infinite; /* เพิ่มอนิเมชั่น */
+    font-family: 'Sriracha', cursive; /* เพิ่มฟอนต์ */
+    color: #333; /* เปลี่ยนสีตัวอักษรให้ชัดเจน */
+    line-height: 1.6; /* ปรับระยะห่างระหว่างบรรทัด */
+    margin: 0; /* ลบ margin เริ่มต้น */
+    padding: 0; /* ลบ padding เริ่มต้น */
+    position: relative; /* เพิ่มตำแหน่งเพื่อใช้กับดาวตก */
+    overflow: hidden; /* ป้องกันการแสดงผลนอกพื้นที่ */
+    display: flex; /* ใช้ Flexbox */
+    flex-direction: column; /* จัดเรียงแนวตั้ง */
+    align-items: center; /* จัดกลางแนวนอน */
+    justify-content: center; /* จัดกลางแนวตั้ง */
+    min-height: 100vh; /* ความสูงขั้นต่ำของหน้า */
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%; /* เริ่มต้นที่ซ้าย */
+    }
+    50% {
+        background-position: 100% 50%; /* เลื่อนไปที่ขวา */
+    }
+    100% {
+        background-position: 0% 50%; /* กลับไปที่ซ้าย */
+    }
+}
+
+.profile-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    /* ปรับความโค้งมน */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* ปรับเงา */
+    border: 1px solid #e0e0e0;
+    /* เพิ่มเส้นขอบ */
+    transition: box-shadow 0.3s, transform 0.3s;
+    /* เพิ่มการเปลี่ยนแปลง */
+}
+
+.profile-container:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    /* เพิ่มเงาเมื่อชี้ */
+    transform: translateY(-5px);
+    /* ยกขึ้นเมื่อชี้ */
+}
+
+.profile-image {
+    width: 160px;
+    /* ปรับขนาดภาพ */
+    height: 160px;
+    /* ปรับขนาดภาพ */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid #00fffb;
+    /* เพิ่มเส้นขอบรอบภาพ */
+    transition: transform 0.3s;
+    /* เพิ่มการเปลี่ยนแปลง */
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    /* ขยายภาพเมื่อชี้ */
+}
+
+.starfall {
+    position: absolute;
+    top: -10%;
+    /* เริ่มจากด้านบน */
+    left: 0;
+    /* เริ่มจากด้านซ้าย */
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* ป้องกันการคลิก */
+}
+
+.star {
+    position: absolute;
+    width: 10px; /* ขนาดดาว */
+    height: 10px; /* ขนาดดาว */
+    background: transparent; /* เปลี่ยนพื้นหลังเป็นโปร่งใส */
+    color: #fff; /* สีดาว */
+    font-size: 20px; /* ขนาดดาว */
+    animation: fall 3s linear infinite; /* เพิ่มการเคลื่อนไหวที่ช้าลง */
+    opacity: 0.8; /* ทำให้ดาวโปร่งแสง */
+    text-align: center; /* จัดตำแหน่งข้อความ */
+    top: -10px; /* เริ่มจากด้านบนสุด */
+}
+
+/* เพิ่มการจัดตำแหน่งดาวแบบสุ่ม*/
+.star:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.star:nth-child(2) {
+    left: 30%;
+    animation-delay: 0.5s;
+}
+
+.star:nth-child(3) {
+    left: 50%;
+    animation-delay: 1s;
+}
+
+.star:nth-child(4) {
+    left: 70%;
+    animation-delay: 1.5s;
+}
+
+.star:nth-child(5) {
+    left: 90%;
+    animation-delay: 2s;
+}
+
+.star:nth-child(6) {
+    left: 20%;
+    animation-delay: 2.5s;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0); /* เริ่มจากตำแหน่งเริ่มต้น */
+        opacity: 1; /* โปร่งใส */
+    }
+
+    100% {
+        transform: translateY(100vh); /* เคลื่อนที่ลง */
+        opacity: 0; /* ทำให้โปร่งสุดเมื่อถึงด้านล่าง */
+    }
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* สีพื้นหลังที่โปร่งใส */
+    border-radius: 15px;
+    /* เพิ่มความโค้งมน */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    /* เพิ่มเงา */
+    padding: 20px;
+    /* เพิ่ม padding */
+    max-width: 800px;
+    /* ความกว้างสูงสุด */
+    width: 100%;
+    /* ความกว้างเต็ม */
+    margin: 20px;
+    /* เพิ่ม margin */
+    max-height: 100vh; /* กำหนดความสูงสูงสุดของ container */
+    overflow-y: hidden; /* ปิดการเลื่อนในแนวตั้งของ container */
+}
+
+h1 {
+    font-size: 2.5rem; /* ขนาดฟอนต์สำหรับหัวข้อ */
+    color: #2C3E50; /* สีข้อความ */
+    margin-bottom: 20px; /* ระยะห่างด้านล่าง */
+    text-align: center; /* จัดกลางข้อความ */
+}
+
+p {
+    font-size: 1.2rem; /* ขนาดฟอนต์สำหรับเนื้อหา */
+    margin-bottom: 15px; /* ระยะห่างด้านล่าง */
+    text-align: justify; /* จัดข้อความให้เต็มบรรทัด */
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* ปรับขนาดฟอนต์สำหรับหน้าจอเล็ก */
+    }
+
+    p {
+        font-size: 1rem; /* ปรับขนาดฟอนต์สำหรับเนื้อหา */
+    }
+}
+    .response-box {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    .response-box:hover {
+        background-color: #e2e6ea;
+    }
+    .response-content {
+        display: none;
+        margin-top: 10px;
+    }
+    #reports-section {
+        max-height: 400px; /* กำหนดความสูงสูงสุด */
+        overflow-y: auto; /* เพิ่มการเลื่อนในแนวตั้ง */
+        margin-top: 20px;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+        padding: 10px;
+        background-color: #fff;
+    }
+    .btn-info {
+        color: #fff;
+        background-color: #80cbc4;
+        transition: background-color 0.3s, transform 0.3s;
+        
+    }
+    .btn-info:hover {
+        background-color: #9fa8da;
+        /* เปลี่ยนสีเมื่อชี้ */
+        transform: scale(1.05);
+        /* ขยายเมื่อชี้ */
+    }
+    .response-box {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        position: relative;
+    }
+    .response-box:hover {
+        background-color: #e2e6ea;
+    }
+    .response-content {
+        display: none;
+        margin-top: 10px;
+    }
+    .modal-body .response-box {
+        margin-bottom: 20px;
+    }
+    .delete-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: red;
+        cursor: pointer;
+    }
+    .btn-custom {
+        background-color: #80cbc4;
+        border-color: #80cbc4;
+        color: white;
+    }
+    .btn-custom:hover {
+        background-color: #9fa8da;
+        border-color: #9fa8da;
+        transform: scale(1.05);
+    }

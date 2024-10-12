@@ -1,0 +1,184 @@
+body {
+    background: linear-gradient(135deg, #A3E4D7, #2ECC71); /* สีพื้นหลังที่สวยงาม */
+    background-size: 200% 200%; /* ขยายขนาดพื้นหลัง */
+    animation: gradientAnimation 15s ease infinite; /* เพิ่มอนิเมชั่นการเลื่อน */
+    font-family: 'Sriracha', cursive; /* ฟอนต์ */
+    color: #333; /* สีข้อความ */
+    min-height: 100vh; /* ความสูงขั้นต่ำของหน้า */
+    justify-content: center; /* จัดกลางแนวนอน */
+    align-items: center; /* จัดกลางแนวตั้ง */
+    overflow: auto; /* ป้องกันการแสดงผลนอกพื้นที่ */
+}
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%; /* เริ่มต้นที่ซ้าย */
+    }
+    50% {
+        background-position: 100% 50%; /* เลื่อนไปที่ขวา */
+    }
+    100% {
+        background-position: 0% 50%; /* กลับไปที่ซ้าย */
+    }
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.95); /* ปรับความโปร่งใส */
+    border-radius: 15px; /* ความโค้งมน */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); /* เพิ่มความเข้มของเงา */
+    padding: 2rem; /* Padding */
+    margin-top: 2rem; /* Margin ด้านบน */
+    transition: transform 0.3s, box-shadow 0.3s; /* เอฟเฟกต์การขยาย */
+}
+
+h2 {
+    color: #2C3E50;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.form-control {
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+    padding: 10px;
+    font-size: 1rem;
+    width: 100%;
+    height: calc(70%);
+}
+
+.form-control:focus {
+    border-color: #2ECC71;
+    box-shadow: 0 0 5px rgba(46, 204, 113, 0.5);
+}
+
+.btn-primary {
+    background-color: #2ECC71; /* สีพื้นหลัง */
+    border-start-start-radius: 20px;
+    border-end-start-radius: 20px; /* ความโค้งมน */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* เอฟเฟกต์การเปลี่ยนสี */
+    padding: 10px 20px; /* Padding */
+    font-size: 1rem; /* ขนาดฟอนต์ */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* เงา */
+    color: #fff;
+    border-color: #6c757d;
+}
+
+.btn-primary:hover {
+    background-color: #27ae60; /* สีเมื่อ hover */
+    transform: scale(1.05); /* ขยายขนาดเมื่อ hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* เพิ่มความเข้มของเงาเมื่อ hover */
+}
+
+.btn-secondary {
+    background-color: #2ECC71;
+    padding: 10px 20px;
+    border-end-end-radius: 20px;
+    border-start-end-radius: 20px;
+}
+
+.btn-secondary:hover {
+    background-color: #27ae60;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%; /* ความโค้งมน */
+    background: rgba(255, 255, 255, 0.5); /* สีฟองอากาศ */
+    opacity: 0.6; /* โปร่งแสง */
+    animation: bubble 10s infinite; /* การเคลื่อนไหว */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* เงา */
+    transition: transform 0.5s; /* เอฟเฟกต์การเคลื่อนไหว */
+}
+
+.bubble:hover {
+    transform: scale(1.1); /* ขยายขนาดเมื่อ hover */
+}
+
+.bubble:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    left: 10%;
+    bottom: -150px;
+    /* ปรับตำแหน่งเริ่มต้น */
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    width: 60px;
+    height: 60px;
+    left: 25%;
+    bottom: -150px;
+    /* ปรับตำแหน่งเริ่มต้น */
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(3) {
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    bottom: -150px;
+    /* ปรับตำแหน่งเริ่มต้น */
+    animation-delay: 4s;
+}
+
+.bubble:nth-child(4) {
+    width: 50px;
+    height: 50px;
+    left: 75%;
+    bottom: -150px;
+    /* ปรับตำแหน่งเริ่มต้น */
+    animation-delay: 6s;
+}
+
+.bubble:nth-child(5) {
+    width: 70px;
+    height: 70px;
+    left: 80%;
+    bottom: -150px;
+    /* ปรับตำแหน่งเริ่มต้น */
+    animation-delay: 8s;
+}
+
+.bubble:nth-child(6) {
+    width: 90px;
+    height: 90px;
+    left: 15%;
+    bottom: -150px;
+    /* ปรับตำแหน่งเริ่มต้น */
+    animation-delay: 10s;
+}
+
+.bubble:nth-child(7) {
+    width: 55px;
+    height: 55px;
+    left: 35%;
+    bottom: -150px;
+    /* ปรับตำแหน่งเริ่มต้น */
+    animation-delay: 12s;
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0) scale(1); /* เริ่มต้น */
+        opacity: 0.6; /* โปร่งแสง */
+    }
+
+    50% {
+        transform: translateY(-300px) scale(1.1); /* ขยายขนาดและเคลื่อนที่ขึ้น */
+        opacity: 0.2; /* โปร่งแสง */
+    }
+
+    100% {
+        transform: translateY(0) scale(1); /* กลับสู่ตำแหน่งเดิม */
+        opacity: 0.6; /* โปร่งแสง */
+    }
+}

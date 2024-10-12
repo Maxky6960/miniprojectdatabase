@@ -1,0 +1,506 @@
+body {
+    font-family: 'Sriracha', cursive;
+    background: linear-gradient(135deg, #A3E4D7 25%, #2ed24c 75%);
+    background-size: 200% 200%;
+    /* ขยายขนาดพื้นหลัง */
+    animation: gradient 20s ease infinite;
+    /* เพิ่มระยะเวลาและใช้ ease เพื่อให้สมูทขึ้น */
+    transition: background 1.5s ease;
+    /* เพิ่ม transition สำหรับพื้นหลัง */
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+        /* เริ่มต้นที่ซ้าย */
+    }
+
+    100% {
+        background-position: 100% 50%;
+        /* เลื่อนไปที่ขวา */
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+        /* เริ่มต้นที่ด้านบน */
+    }
+
+    25% {
+        background-position: 100% 100%;
+        /* เลื่อนไปที่ด้านล่าง */
+    }
+
+    50% {
+        background-position: 100% 0%;
+        /* เลื่อนไปที่ด้านบน */
+    }
+
+    75% {
+        background-position: 0% 0%;
+        /* กลับไปที่ด้านบน */
+    }
+
+    100% {
+        background-position: 0% 0%;
+        /* ยังคงอยู่ที่ด้านบน */
+    }
+}
+
+.like-button,
+.repost-button {
+    margin-right: 10px;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-20px);
+    }
+
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.bounce {
+    animation: bounce 1s;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.5s forwards;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.5s forwards;
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.7);
+}
+
+.rounded-title {
+    background-color: #e0f2f1;
+    border-radius: 20px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.liked {
+    background-color: #007bff;
+    color: white;
+}
+
+.reposted {
+    background-color: #ffc107;
+    color: white;
+}
+
+.comment-box {
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.comment-box:before,
+.comment-box:after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    /* ปรับได้ตามต้องการ */
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+.comment-input {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    max-height: 100px;
+    /* ปรับความสูงสูงสุดที่ต้องการ */
+    overflow-y: auto;
+    /* ให้มีการเลื่อนเมื่อมีข้อความมาก */
+    white-space: pre-wrap;
+    /* ตัดขึ้นบรรทัดใหม่ตามความกว้าง */
+}
+
+.comment-input:focus {
+    border-color: #a2a2a2;
+    outline: none;
+}
+
+.submit-comment {
+    background-color: #29b6f6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.submit-comment:hover {
+    background-color: #0056b3;
+}
+
+.navbar {
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.list-group-item:last-child {
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.list-group-item {
+    background-color: #e0f2f1;
+    /* สีพื้นหลัง */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    /* เพิ่มการเปลี่ยนแปลงเงา */
+    margin-bottom: 0.2cm;
+    color: #000000;
+    /* เปลี่ยนสีตัวอักษรให้เข้ากับพื้นหลัง */
+    border-radius: 20px;
+    padding: 10px;
+    /* เพิ่ม padding เพื่อความสะดวกในการอ่าน */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* ปรับเงาให้ชัดเจน */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    /* ลดความเข้มของ text shadow */
+}
+
+.list-group-item:hover {
+    background-color: #a3e1d4;
+    /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+    transform: scale(1.03);
+    /* ขยายขนาดเมื่อ hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    /* เพิ่มความชัดเจนของเงาเมื่อ hover */
+}
+
+.list-group-item a {
+    color: #2c3e50;
+    /* สีลิงก์ */
+    font-weight: bold;
+    text-decoration: none;
+    /* ไม่ให้มีขีดเส้นใต้ */
+}
+
+.list-group-item a:hover {
+    color: #2980b9;
+    /* เปลี่ยนสีเมื่อ hover */
+    text-decoration: underline;
+    /* ขีดเส้นใต้เมื่อ hover */
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7); /* เพิ่มความโปร่งใสให้ชัดเจนขึ้น */
+    opacity: 0.8; /* ปรับความโปร่งใส */
+    animation: bubble 10s infinite ease-in-out; /* ลดระยะเวลาเพื่อให้เคลื่อนไหวเร็วขึ้น */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* เพิ่มเงาให้ดูน่าสนใจ */
+}
+
+.bubble:nth-child(1) {
+    width: 120px; /* ปรับขนาด */
+    height: 120px;
+    bottom: 0;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    width: 80px; /* ปรับขนาด */
+    height: 80px;
+    bottom: 10%;
+    left: 30%;
+    animation-delay: 1s; /* ปรับเวลา */
+}
+
+.bubble:nth-child(3) {
+    width: 100px; /* ปรับขนาด */
+    height: 100px;
+    bottom: 5%;
+    left: 50%;
+    animation-delay: 2s; /* ปรับเวลา */
+}
+
+.bubble:nth-child(4) {
+    width: 70px; /* ปรับขนาด */
+    height: 70px;
+    bottom: 15%;
+    left: 70%;
+    animation-delay: 3s; /* ปรับเวลา */
+}
+
+.bubble:nth-child(5) {
+    width: 90px; /* ปรับขนาด */
+    height: 90px;
+    bottom: 20%;
+    left: 90%;
+    animation-delay: 4s; /* ปรับเวลา */
+}
+
+.bubble:nth-child(6) {
+    width: 110px; /* ปรับขนาด */
+    height: 110px;
+    bottom: 5%;
+    left: 15%;
+    animation-delay: 5s; /* ปรับเวลา */
+}
+
+.bubble:nth-child(7) {
+    width: 85px; /* ปรับขนาด */
+    height: 85px;
+    bottom: 10%;
+    left: 85%;
+    animation-delay: 6s; /* ปรับเวลา */
+}
+
+@keyframes bubble {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0.8; /* ปรับความโปร่งใส */
+    }
+
+    15% {
+        transform: translate(0, -400px) rotate(30deg); /* ขึ้นสูงขึ้นมากขึ้น */
+    }
+
+    30% {
+        transform: translate(0, -350px) rotate(60deg); /* ขึ้นไปกลาง ๆ */
+    }
+
+    45% {
+        transform: translate(0, -400px) rotate(90deg); /* ขึ้นสูงอีก */
+    }
+
+    60% {
+        transform: translate(0, -300px) rotate(120deg); /* กลับลงมานิดหน่อย */
+    }
+
+    75% {
+        transform: translate(0, -100px) rotate(150deg); /* ขยับลงมาอีกนิด */
+    }
+
+    90% {
+        transform: translate(0, -20px) rotate(180deg); /* ขยับใกล้จุดเริ่มต้น */
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(360deg); /* กลับสู่ตำแหน่งเดิม */
+        opacity: 0.5; /* ปรับความโปร่งใส */
+    }
+}
+
+.emoji-picker {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1000;
+    bottom: 5%;
+    /* ย้ายขึ้นมาข้างบน */
+    right: 0;
+    /* ให้ติดซ้าย */
+    transform: translateY(-10px);
+    /* ปรับตำแหน่งให้ห่างจากช่อง */
+}
+
+.emoji-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* แบ่งเป็น 4 คอลัมน์ */
+    gap: 10px;
+    /* ระยะห่างระหว่างอิโมจิ */
+    padding: 10px;
+    /* เพิ่ม padding ให้กับกล่อง */
+    background-color: #f9f9f9;
+    /* สีพื้นหลังของกล่อง */
+    border-radius: 8px;
+    /* ทำให้มุมมน */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* เงาเบาเพื่อให้ดูมีมิติ */
+    overflow-y: auto;
+    /* เลื่อนเมื่อมีจำนวนมาก */
+    max-height: 300px;
+    /* สูงสุด */
+}
+
+.emoji-list .emoji {
+    display: flex;
+    justify-content: center;
+    /* จัดให้อิโมจิกึ่งกลาง */
+    align-items: center;
+    /* จัดให้เนื้อหากึ่งกลาง */
+    font-size: 32px;
+    /* ขนาดอิโมจิ */
+    cursor: pointer;
+    /* เปลี่ยนเคอร์เซอร์เมื่อชี้ไปที่อิโมจิ */
+    transition: transform 0.2s;
+    /* เอฟเฟกต์การเปลี่ยนขนาด */
+    padding: 10px;
+    /* เพิ่ม padding ให้อิโมจิ */
+    border-radius: 4px;
+    /* ทำให้มุมมนของอิโมจิ */
+}
+
+.emoji-list .emoji:hover {
+    background-color: #e0e0e0;
+    /* เปลี่ยนสีพื้นหลังเมื่อชี้เมาส์ */
+    transform: scale(1.2);
+    /* ขยายขนาดอิโมจิเมื่อชี้เมาส์ */
+}
+
+.emoji-item {
+    cursor: pointer;
+    font-size: 24px;
+    text-align: center;
+}
+
+.suggestions-list {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 40%;
+    z-index: 1000;
+    /* ให้กว้างเต็มที่ */
+    max-height: 300px;
+    /* สูงสุด */
+    overflow-y: auto;
+    /* เลื่อนเมื่อมีจำนวนมาก */
+    z-index: 1050;
+    /* ควบคุมลำดับซ้อน */
+    margin-top: 53px;
+    /* ขยับลงจากแถบเมนู */
+}
+
+.suggestion-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    /* ขอบล่าง */
+    cursor: pointer;
+    /* เปลี่ยน cursor */
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+    /* เปลี่ยนสีเมื่อ hover */
+}
+
+.comment-box img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 50px;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.btn-outline-success {
+    color: #ffffff;
+    background-color: #a2e4d6;
+    border-radius: 50px;
+    border-color: #a3e4d7;
+}
+
+.open-button {
+    width: 10px;
+    /* กำหนดความกว้างของรูปภาพ */
+    height: 10px;
+    /* กำหนดความสูงของรูปภาพ */
+}
+
+.like-animation {
+    position: absolute;
+    font-size: 24px;
+    color: #ff0000;
+    animation: likeBounce 0.6s ease-out forwards;
+}
+
+@keyframes likeBounce {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}

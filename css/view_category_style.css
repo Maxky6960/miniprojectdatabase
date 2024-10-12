@@ -1,0 +1,292 @@
+        body {
+            font-family: 'Sriracha', cursive;
+            background: linear-gradient(135deg, #a3e4d7 25%, #2ed24c 75%);
+            background-size: 200% 200%; /* ขยายขนาดพื้นหลัง */
+            animation: gradient 20s ease infinite; /* เพิ่มระยะเวลาและใช้ ease เพื่อให้สมูทขึ้น */
+            flex-direction: column;
+            min-height: auto;
+            overflow-y: auto;
+            color: #2C3E50;
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.333);
+            opacity: 0.6;
+            animation: bubble 10s infinite;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            /* เพิ่มเงาให้ฟองอากาศ */
+        }
+
+        .bubble:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            left: 10%;
+            bottom: -150px;
+            /* ปรับตำแหน่งเริ่มต้น */
+            animation-delay: 0s;
+        }
+
+        .bubble:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            left: 25%;
+            bottom: -150px;
+            /* ปรับตำแหน่งเริ่มต้น */
+            animation-delay: 2s;
+        }
+
+        .bubble:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            left: 50%;
+            bottom: -150px;
+            /* ปรับตำแหน่งเริ่มต้น */
+            animation-delay: 4s;
+        }
+
+        .bubble:nth-child(4) {
+            width: 50px;
+            height: 50px;
+            left: 75%;
+            bottom: -150px;
+            /* ปรับตำแหน่งเริ่มต้น */
+            animation-delay: 6s;
+        }
+
+        .bubble:nth-child(5) {
+            width: 70px;
+            height: 70px;
+            left: 80%;
+            bottom: -150px;
+            /* ปรับตำแหน่งเริ่มต้น */
+            animation-delay: 8s;
+        }
+
+        .bubble:nth-child(6) {
+            width: 90px;
+            height: 90px;
+            left: 15%;
+            bottom: -150px;
+            /* ปรับตำแหน่งเริ่มต้น */
+            animation-delay: 10s;
+        }
+
+        .bubble:nth-child(7) {
+            width: 55px;
+            height: 55px;
+            left: 35%;
+            bottom: -150px;
+            /* ปรับตำแหน่งเริ่มต้น */
+            animation-delay: 12s;
+        }
+
+        @keyframes bubble {
+            0% {
+                transform: translateY(0);
+                opacity: 0.6;
+            }
+
+            50% {
+                transform: translateY(-300px);
+                /* ปรับความสูงของการลอย */
+                opacity: 0.2;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 100% 50%; /* เริ่มต้นที่ด้านขวา */
+            }
+            50% {
+                background-position: 0% 50%; /* เลื่อนไปที่ด้านซ้าย */
+            }
+            100% {
+                background-position: 100% 50%; /* กลับไปที่ด้านขวา */
+            }
+        }
+
+        .navbar {
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .list-group-item:first-child {
+            border-top-left-radius: 20px !important;
+            border-top-right-radius: 20px !important;
+        }
+
+        .list-group-item:last-child {
+            border-bottom-right-radius: 20px !important;
+            border-bottom-left-radius: 20px !important;
+        }
+
+        .list-group-item {
+            background-color: #ffffff;
+            /* สีพื้นหลัง */
+            transition: background-color 0.3s, transform 0.2s;
+            margin-bottom: 0.2cm;
+            color: #2C3E50;
+            /* สีข้อความเข้ม */
+            text-align: center;
+            border-radius: 20px;
+            padding: 10px;
+            /* เพิ่ม padding เพื่อความสบาย */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            /* ปรับเงาให้มีมิติ */
+            position: relative;
+            /* เพื่อให้สามารถใช้ pseudo-element ได้ */
+            overflow: hidden;
+            /* ลบส่วนที่เกินออกจากกล่อง */
+        }
+
+        .list-group-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(45, 202, 105, 0.1);
+            /* เบลอสีเขียวอ่อน */
+            border-radius: 20px;
+            z-index: 0;
+            /* เบลออยู่ด้านหลัง */
+            transition: background 0.3s;
+        }
+
+        .list-group-item:hover:before {
+            background: rgba(45, 202, 105, 0.3);
+            /* สีเมื่อ hover */
+        }
+
+        .list-group-item:hover {
+            transform: scale(1.05);
+            /* ขยายขนาดเมื่อ hover */
+        }
+
+        .list-group-item a {
+            color: #2ECC71;
+            /* สีของลิงก์ */
+            font-weight: bold;
+            text-decoration: none;
+            /* ลบเส้นใต้จากลิงก์ */
+            position: relative;
+            /* เพื่อให้ลิงก์อยู่เหนือ pseudo-element */
+            z-index: 1;
+            /* ให้อยู่ด้านหน้า */
+        }
+
+        .list-group-item a:hover {
+            color: #1ABC9C;
+            /* สีเมื่อ hover ของลิงก์ */
+            text-decoration: underline;
+            /* เพิ่มเส้นใต้เมื่อ hover */
+        }
+
+        .list-post {
+            margin-bottom: 15px;
+            padding: 20px;
+            border: 5px solid #e0f2f1;
+            border-radius: 20px;
+            list-style-type: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .list-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary {
+            color: #ffffff;
+            text-align: center;
+            background: #2c3e50;
+            border-radius: 50px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #1a242f;
+        }
+
+        .rounded-title {
+            background: #ffffffc1;
+            color: #000000;
+            text-align: center;
+            border-radius: 50px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .title {
+            background: #ffffff;
+            color: #000000;
+            text-align: center;
+            border-radius: 50px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-back {
+            background-color: #2DF793;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            color: white;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-back:hover {
+            background-color: #26CBFC;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-back i {
+            margin-right: 5px;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+            background-color: transparent;
+        }
+        .category {
+            font-size: 2.5rem;
+            color: #ffffff;
+            text-align: center;
+            background: linear-gradient(135deg, #2ecc70, #27ae60);
+            border-radius: 50px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .category:hover {
+            transform: translateY(-5px);
+            /* ยกขึ้นเมื่อโฮเวอร์ */
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+            /* เพิ่มความเข้มของเงาเมื่อโฮเวอร์ */
+        }
